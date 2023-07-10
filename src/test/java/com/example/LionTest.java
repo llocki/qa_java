@@ -28,7 +28,6 @@ public class LionTest {
         return new Object[][]{
                 {"Самец", true},
                 {"Самка", false},
-
         };
     }
 //-------------------------------------------------------------------------------
@@ -42,7 +41,7 @@ public class LionTest {
     public void getKittens() throws Exception {
 
         Feline feline = Mockito.mock(Feline.class);
-        Lion lion = new Lion(sex ,feline);
+        Lion lion = new Lion(feline);
 
         Mockito.when(feline.getKittens()).thenReturn(1);
 
@@ -56,11 +55,27 @@ public class LionTest {
     }
 
     //--------------------------------------------------------------------------------
+
     @Test
     public void doesHaveMane() throws Exception {
 
+
         Feline feline = Mockito.mock(Feline.class);
         Lion lion = new Lion(sex, feline);
+
+        boolean actual = lion.doesHaveMane();
+        boolean expected = hasMane;
+
+            assertEquals(expected, actual);
+
+    }
+    //-----------------------------------------------------------------------------------
+
+   @Test(expected = Exception.class)
+    public void invalidSexTest() throws Exception {
+
+        Feline feline = Mockito.mock(Feline.class);
+        Lion lion = new Lion("Мужской", feline);
 
         boolean actual = lion.doesHaveMane();
         boolean expected = hasMane;
@@ -73,7 +88,7 @@ public class LionTest {
     public void getFood () throws Exception {
 
         Feline feline = Mockito.mock(Feline.class);
-        Lion lion = new Lion(sex ,feline);
+        Lion lion = new Lion(feline);
 
         Mockito.when(feline.eatMeat()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
 

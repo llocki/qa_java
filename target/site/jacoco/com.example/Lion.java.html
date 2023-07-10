@@ -19,18 +19,21 @@ public class Lion {
         }
 <span class="fc" id="L20">    }</span>
 
+<span class="fc" id="L22">    public Lion(Feline feline){</span>
+<span class="fc" id="L23">        this.predator = feline;</span>
+<span class="fc" id="L24">    }</span>
 
 
     public int getKittens() {
-<span class="fc" id="L25">        return predator.getKittens();</span>
+<span class="fc" id="L28">        return predator.getKittens();</span>
     }
 
     public boolean doesHaveMane() {
-<span class="fc" id="L29">        return hasMane;</span>
+<span class="fc" id="L32">        return hasMane;</span>
     }
 
     public List&lt;String&gt; getFood() throws Exception {
-<span class="fc" id="L33">        return predator.eatMeat();</span>
+<span class="fc" id="L36">        return predator.eatMeat();</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

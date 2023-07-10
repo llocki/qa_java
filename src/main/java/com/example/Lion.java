@@ -19,6 +19,9 @@ public class Lion {
         }
     }
 
+    public Lion(Feline feline){
+        this.predator = feline;
+    }
 
 
     public int getKittens() {
